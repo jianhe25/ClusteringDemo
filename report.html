@@ -1,0 +1,113 @@
+<!doctype html>
+<head>
+	<title> Clustering Report </title>
+
+	<link rel="stylesheet" type="text/css" href="report.css">
+</head>
+
+<body>	
+	
+<div class="main"> 
+
+	<h1 style="text-align:center"> 	Clustering Report </h1>
+	<h4 style="text-align:center"> 何剑，信研3班，2013210943 </h4>
+	<p style="text-align:center"> <a href="index.html"> Go to clustering demo </a> </p>		
+
+	1. <a href="#section1"> Algorithms Review </a> <br>
+	2. <a href="#section2"> Clustering Demo </a> <br>
+	3. <a href="#section3"> Analysis of K-means </a> <br>
+	4. <a href="#section4"> Analysis of SLC </a> <br>
+	5. <a href="#section5"> Image segmentation </a> <br>
+
+	<h2> <a name="section1"> 1. Algorithms Review </a></h2>
+		<h3> 1.1 K-means </h3>
+			<p>
+				K-means is a very old algorithm for clustering. First, initialize k centers. 
+				Second, assign each point to the closest center. Third, Recompute center in each cluster. Details of K-means listed below:
+			</p>
+			<ol>
+				<li> Determine the value of K. </li>
+				<li> Choose K cluster centres randomly.</li>
+				<li> Each data point is assigned to its closest centroid. </li>
+				<li> Use the mean of each cluster to update each centroid. </li>
+				<li> Repeat until no more new assignment. </li>
+				<li> Return the K centroids. </li>
+			</ol>
+		
+		<h3> 1.2 Sequential Leader Clustering (SLC) </h3>
+			<p>
+				SLC is a online clustering algorithm. The basic idea is when a new point came, assign this point to either a old cluster (if distance between point and old cluster center is smaller than a threshold) or establish a new cluster. This algorithm is very helpful in online applications such as Facebook and Renren.com
+			</p>
+				<ol>
+				<li> Compute the distance between the new data point and every cluster's centre. </li>
+				<li> If the distance is smaller than the chosen threshold, assign the new data point to the corresponding cluster and re-compute cluster centre. </li>
+				<li> Otherwise, create a new cluster with the new data point as its centre.
+ </li>
+				</ol>
+			</p>
+		<h2> <a name="section2"> 2. Clustering Demo </a></h2> 
+			<p>
+				In this assignment, I have implemented a clustering algorithm demo by javascripts. 
+				I love the simplicity yet extremely powerful expressiviness of javascripts. My clustering demo has several features.
+			</p>
+				<ul>
+					<li> User can set K for K-means experiment </li>
+					<li> For K-means algorithm: we can control iteration number by next/prev </li>
+					<li> For K-means algorithm: support play / stop to automatical iterate </li>
+					<li> Provide good animated transition between two iterations </li>
+				</ul>
+			<p> Following is a screenshot of my clustering demo. 
+			</p>
+			<img src="cluster-demo.jpg" height="500" width="1000"></img>
+
+		<h2> <a name="section3"> 3. Analysis of K-means </a></h2> 
+			<p> With the clustering demo, I have set up a experiment to obeserve behavior of K-means </p> 
+			<h3> 3.1 Configuration </h3>
+				<p> I use 10 clusters, and use pseudo 2-dimentional gaussian distribution to generate data points. (total 400 data points) Before running K-means, I have done some data preprocessing such as finding extreme of data in each dimensions</p>
+			<h3> 3.2 Running Results </h3>
+				<img src="report-image/1.png" height="200", width="200"></img>
+				<img src="report-image/2.png" height="200", width="200"></img>
+				<img src="report-image/3.png" height="200", width="200"></img>
+				<img src="report-image/4.png" height="200", width="200"></img>
+				<img src="report-image/5.png" height="200", width="200"></img>
+				<img src="report-image/6.png" height="200", width="200"></img>
+				<img src="report-image/7.png" height="200", width="200"></img>
+				<img src="report-image/8.png" height="200", width="200"></img>
+			<h3> 3.3 Some Obeservations </h3>
+				
+				<p> <span style="font-weight:bold">K-means converge fast: </span> For K = 10 and numData = 400, it usually converge in just 10 iterations </p>
+
+				<p> <span style="font-weight:bold">K is hard to determine: </span> When K is larger than the underlying cluster number, result usually not good. For instance, in my experiments, I only use 4 underlying gaussian distribution to generate 400 data points (each generate 100). Then when K = 10, K-means tend to split one underlying gaussian to several cluster.  </p>
+
+		<h2> <a name="section4"> 4. Analysis of SLC </a></h2> 
+			<p> I just implemented SLC, The result is much worser than K-means, K-means has clearly find 4 underlying clusters, while SLC only find 3 of them. </p>
+			<img src="report-image/compare.png" height="500", width="1000"> </img>
+		
+		<h2> <a name="section5"> 5. Image segmentation </a></h2>
+			<h3> 5.1 Simple Image </h3>
+				<p> I also implemented image segmentation by K-means. My solution is very simple: Use K-means clustering on the RGB values of each image, and find K center RGB values of the image. For this experiment, I set K = 6.</p>
+				<div style="float:left; margin-left:100px;">
+					<h4> Before: </h4> 
+					<img src='report-image/oldChina.png'></img>
+				</div>
+				<div style="float:left; margin-left: 100px">
+					<h4> After: </h4> 
+					<img src='report-image/newChina.png'></img>
+				</div>
+				<p style="clear:both"> Original image only has 2 different RGB values (yellow and red), However after K-means clustering, there are 3 clusters. Thus for image with less color, K-means might over cluster the image</p>
+			<h3> 5.2 Complex Image </h3>
+				<p> I also tried a very complex image "weChat". Result looks ok, still K = 6 </p>
+				<div style="float:left; margin-left:100px;">
+					<h4> Before: </h4> 
+					<img src='report-image/oldWechat.png'></img>
+				</div>
+				<div style="float:left; margin-left: 100px">
+					<h4> After: </h4> 
+					<img src='report-image/newWechat.png'></img>
+				</div>
+				<p style="clear:both"> K-means got the almost right result, but the clutersing is very rough which is hard to use for future process</p>
+
+	</div>
+	
+
+</body>

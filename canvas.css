@@ -1,0 +1,113 @@
+#canvas {
+    display:block;
+    margin:10px auto;
+    border:1px solid black;
+
+}
+#canvas2 {
+    display:block;
+    margin:10px auto;
+    border:1px solid black;
+}
+
+.kmeans {
+	text-align: justify;
+	border: :10px solid black;
+	display:block;
+	float: left;
+  margin-left: 20px;
+}
+.SLC {
+  text-align: justify;
+  border: :10px solid black;
+  display:block;
+  float: right; 
+  margin-right: 20px;
+}
+/*
+.iteration-text {
+	float: left;
+	margin-left: 20px;
+	margin-top:50px;
+}
+.iteration-text p {
+	color: red;
+	font-size: 20px;
+	text-align: center;
+}
+*/
+
+a.slidesjs-next,
+a.slidesjs-previous,
+a.slidesjs-play,
+a.slidesjs-stop {
+  background-image: url(img/btns-next-prev.png);
+  background-repeat: no-repeat;
+  display:block;
+  width:12px;
+  height:18px;
+  overflow: hidden;
+  text-indent: -9999px;
+  float: left;
+  margin-right:5px;
+}
+.text-box-input {
+  width : 40px;
+}
+a.slidesjs-next {
+  margin-right:10px;
+  background-position: -12px 0;
+}
+
+a:hover.slidesjs-next {
+  background-position: -12px -18px;
+}
+
+a.slidesjs-previous {
+  background-position: 0 0;
+}
+
+a:hover.slidesjs-previous {
+  background-position: 0 -18px;
+}
+
+a.slidesjs-play {
+  width:15px;
+  background-position: -25px 0;
+  margin-left:20px;
+}
+
+a:hover.slidesjs-play {
+  background-position: -25px -18px;
+}
+
+a.slidesjs-stop {
+  width:18px;
+  background-position: -41px 0;
+  margin-left: 20px
+}
+
+a:hover.slidesjs-stop {
+  background-position: -41px -18px;
+}
+
+#slides a:link,
+#slides a:visited {
+  color: #333
+}
+
+#slides a:hover,
+#slides a:active {
+  color: #9e2020
+}
+
+.navbar {
+  overflow: hidden
+}
+
+.text-box {
+  float: right;
+}
+.buttons {
+  float: left;
+}

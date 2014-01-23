@@ -1,0 +1,23 @@
+<!doctype html>
+<head>
+  	<script src="jquery-2.0.3.js"></script>
+	<script type="text/javascript" src="squential-leader-cluster.js"></script>
+	<script type="text/javascript" src="k-means.js"></script>
+	<script type="text/javascript" src="jpgjs/jpg.js"></script>
+	<script type="text/javascript" src="Image-segmentation.js"></script>
+	<link rel="stylesheet" type="text/css" href="canvas.css">
+	<title> Image Segmentation </title>
+</head>
+
+<body onload="loadImages()">
+	<div> 
+		<h2> Original Image </h2>
+		<canvas id="c1"></canvas>	
+		<input type="button" value="Segmentation" onclick="imageSegmentation(c1)"></input>
+	</div>
+	
+	<canvas id="c2"></canvas>	
+</body>
+
+
+

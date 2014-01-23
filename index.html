@@ -1,0 +1,48 @@
+<!doctype html>
+<head>
+  	<script src="jquery-2.0.3.js"></script>
+	<script type="text/javascript" src="squential-leader-cluster.js"></script>
+	<script type="text/javascript" src="k-means.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="canvas.css">
+	<title> K-means demo </title>
+</head>
+
+<body>
+ 	<h2 style="text-align:center"> Clustering: K-means vs SLC </h2>
+ 	<p style="text-align:center"> <a href="report.html"> Go to report </a> </p>	
+	<div class="kmeans">
+		<h3 style="text-align:center"> K-means Iteration Times: <span style="color:red" id="iteration-times">0</span></h3>	
+		<canvas id="canvas" ></canvas>
+		
+		<div class="buttons">
+			<a class="slidesjs-previous" href="#">Previous</a>
+			<a class="slidesjs-next" href="#">Next</a>
+			<a class="slidesjs-play" href="#">Play</a>
+			<a class="slidesjs-stop" href="#">Stop</a>
+		</div>
+		<div class="text-box">
+			<span  style="font-weight:bold;">Cluster number </span> 
+			<input type="text-box" class="text-box-input" id="cluster-number" value="10"></input>
+			<input id="submit" type="submit" value="submit" style="font-size:20px"></input>
+		</div>
+	</div>	
+	<div class="SLC">
+		<h3 style="text-align:center"> Sequential Leader Clustering <span style="color:red" id="iteration-times">0</span></h3>	
+		<canvas id="canvas2" ></canvas>
+		<div class="buttons">
+			<a class="slidesjs-previous" id="previous2" href="#">Previous</a>
+			<a class="slidesjs-next" id="next2" href="#">Next</a>
+			<a class="slidesjs-play" id="play" href="#">Play</a>
+			<a class="slidesjs-stop" id="stop" href="#">Stop</a>
+		</div>
+		<div class="text-box">
+			<span  style="font-weight:bold;">SLC-Threshold </span> 
+			<input type="text-box" class="text-box-input" id="SLC-threshold" value="70"></input>
+			<input id="submit2" type="submit" value="submit" style="font-size:20px"></input>
+		</div>
+	</div>
+	
+</body>
+
+
